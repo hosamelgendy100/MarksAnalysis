@@ -215,9 +215,9 @@ def AnalyzeData():
 
         # Save Student Total
         studentTotal = CalcStudentTotal(subjectsCN)
-        newSheet["C"+str(newSheetCellNumber)] = studentTotal
+        newSheet["C"+str(newSheetCellNumber)] = float(studentTotal)
         # convert cell to number
-        newSheet["C"+str(newSheetCellNumber)].number_format = '0'
+        newSheet["C"+str(newSheetCellNumber)].number_format = '0.0'
 
         newSheet["C"+str(newSheetCellNumber)].font = cellFontSettings
         newSheet["C"+str(newSheetCellNumber)
