@@ -52,7 +52,7 @@ finishedWorkbook.remove(finishedWorkbook.active)
 
 
 def getSubjectsTotal():
-    total: float = 0.0
+    total = 0
     for subject in subjectsMarks:
         total += subject
     return total
@@ -65,7 +65,7 @@ def CalcStudentTotal(subjects):
     studentName = orginalSheet[nameCN].value
     studentClass = orginalSheet[classCN].value
 
-    total: float = 0.0
+    total = 0
     for i in range(len(subjects)):
         subjects[i] = RemoveNumbers(subjects[i])
         subjects[i] = subjects[i] + str(cellNumber)
@@ -215,7 +215,7 @@ def AnalyzeData():
 
         # Save Student Total
         studentTotal = CalcStudentTotal(subjectsCN)
-        newSheet["C"+str(newSheetCellNumber)] = float(studentTotal)
+        newSheet["C"+str(newSheetCellNumber)] = round(studentTotal,2)
         # convert cell to number
         newSheet["C"+str(newSheetCellNumber)].number_format = '0.0'
 
